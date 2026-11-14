@@ -7,7 +7,7 @@ drafts the wording to send back. A Rovo agent answers the same questions in chat
 
 Built for Atlassian Codegeist 2026 (Specialized Industries). Open source, MIT.
 
-Demo video: https://youtu.be/VIDEO_ID
+Demo video: https://youtu.be/KvgarPwIzac
 
 ## What it does
 
