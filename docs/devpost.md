@@ -124,8 +124,9 @@ settings screen, and it makes the same engine useful for every team that reviews
 
 ## Testing instructions (private field)
 
-1. Install Sidebar on your Jira site with the installation link above. It needs Jira, Jira
-   Service Management and Confluence on the same site.
+1. Install Sidebar on your site with the installation link above, once for **Jira** and once for
+   **Confluence** (Sidebar reads the playbook page from Confluence). The site needs Jira, Jira
+   Service Management and Confluence.
 2. In Confluence, create a page titled **Sidebar Playbook** and paste the contents of
    [demo/playbook.md](https://github.com/its-janghoon/sidebar/blob/main/demo/playbook.md).
 3. In any Jira Service Management project, create a request and attach
