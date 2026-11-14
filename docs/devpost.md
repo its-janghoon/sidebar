@@ -136,3 +136,31 @@ settings screen, and it makes the same engine useful for every team that reviews
    to the same request. Sidebar shows the redline and flags the 30 to 10 day change.
 5. Try "Reply with this wording", "Accept" and "Send redline", the Ask box in the right-hand
    Sidebar panel, and the **Sidebar** agent in Rovo chat.
+
+## Additional info (for judges)
+
+- Submitter type: Individual. Country: Korea, Republic of. Province: N/A. Organization: N/A.
+- Started: November 13, 2026. New project.
+- App ID: `114441bd-06b3-4587-8d4e-e7eb548f70e3`
+
+### How the project meets the main technology requirement
+
+Sidebar is built entirely on Forge and runs on Atlassian:
+
+- **Jira Service Management**: the requester sends the contract through the portal; Sidebar posts replies and the final redline back to the request as public comments.
+- **Jira**: an issue panel (versions, redline, findings, decisions) and an issue context panel (verdict and Ask box), both Custom UI with resolver functions. Attachments are read as contract versions; decisions are recorded as internal notes.
+- **Confluence**: the playbook is a normal Confluence page that Sidebar reads and parses into clauses.
+- **Rovo**: the Sidebar agent with three actions (check against the playbook, compare versions, find past matters).
+- **Forge platform**: Forge LLM for the clause review, Forge KVS for versions and decisions, and no outside servers, so the app is eligible for Runs on Atlassian.
+
+### Why this category
+
+Sidebar is built for one industry workflow: in-house legal teams reviewing customer contracts. Its playbook, findings and redlines follow how legal teams already work, so it fits Specialized Industries (legal).
+
+### Experience building with Forge
+
+What worked well: Custom UI with resolvers made the panel feel native, Forge LLM let the review stay on Atlassian without managing keys, and Rovo actions were easy to add on top of the same resolver functions. What we struggled with: one app cannot hold Jira and Bitbucket permissions together, so versions moved into Forge storage; the function time limit shaped how much text we can send to the model at once; and Forge logs arrive late, which slows debugging. What we would improve: a way to combine Bitbucket and Jira scopes in one app, longer function limits for LLM calls, and faster log streaming in `forge logs`.
+
+### AI tools used
+
+Kiro (Kiro CLI and Kiro Crew) for planning, code, testing on a live site and the demo video. Forge LLM inside the app. Amazon Polly for the video voice.
