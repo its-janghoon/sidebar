@@ -1,0 +1,8 @@
+node_modules/
+build/
+demo/video/raw/
+demo/video/out/
+demo/video/deliver/
+demo/video/voice/
+demo/video/cards/out/
+*.mp4

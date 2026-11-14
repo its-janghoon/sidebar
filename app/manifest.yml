@@ -1,0 +1,103 @@
+modules:
+  jira:issuePanel:
+    - key: sidebar-panel
+      resource: main
+      resolver:
+        function: resolver
+      title: Sidebar
+      icon: resource:main;icon.svg
+  jira:issueContext:
+    - key: sidebar-context
+      resource: main
+      resolver:
+        function: resolver
+      title: Sidebar
+      label: Sidebar
+      icon: resource:main;icon.svg
+      status:
+        type: lozenge
+        value:
+          label: Review
+          type: default
+  rovo:agent:
+    - key: sidebar-agent
+      name: Sidebar
+      description: Reviews contract requests against your legal playbook, compares versions and recalls past matters with the same party.
+      icon: resource:main;icon.svg
+      prompt: resource:agent;prompt.txt
+      conversationStarters:
+        - Is this contract ready to sign?
+        - What changed in the latest version?
+        - What did we agree with this party before?
+      actions:
+        - sidebar-check-playbook
+        - sidebar-compare-versions
+        - sidebar-past-matters
+  action:
+    - key: sidebar-check-playbook
+      name: Check contract against playbook
+      function: act-check
+      actionVerb: GET
+      description: Review the latest contract version on a legal request against the company playbook. Returns each clause that breaks the playbook with severity, reason, their text, the playbook position and suggested wording.
+      inputs:
+        issueKey:
+          title: Request key
+          type: string
+          required: false
+          description: The Jira request key, for example CLSD-7. Leave empty when the user is viewing the request.
+    - key: sidebar-compare-versions
+      name: Compare contract versions
+      function: act-compare
+      actionVerb: GET
+      description: Show which paragraphs changed between the two most recent contract versions on a legal request.
+      inputs:
+        issueKey:
+          title: Request key
+          type: string
+          required: false
+          description: The Jira request key, for example CLSD-7. Leave empty when the user is viewing the request.
+    - key: sidebar-past-matters
+      name: Find past matters with this party
+      function: act-past
+      actionVerb: GET
+      description: Find earlier legal requests with the same counterparty and the decisions recorded on them, such as accepted clauses and agreed liability caps.
+      inputs:
+        issueKey:
+          title: Request key
+          type: string
+          required: false
+          description: The Jira request key, for example CLSD-7. Leave empty when the user is viewing the request.
+  llm:
+    - key: sidebar-llm
+      model:
+        - claude
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: act-check
+      handler: index.checkAgainstPlaybook
+    - key: act-compare
+      handler: index.compareVersions
+    - key: act-past
+      handler: index.findPastMatters
+resources:
+  - key: main
+    path: static/sidebar/build
+  - key: agent
+    path: agent
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - read:jira-user
+    - read:servicedesk-request
+    - write:servicedesk-request
+    - read:confluence-content.all
+    - search:confluence
+    - storage:app
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 512
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/114441bd-06b3-4587-8d4e-e7eb548f70e3

@@ -1,0 +1,15 @@
+{
+  "name": "sidebar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sidebar: a second opinion on every contract, inside Jira. A Forge app with a Rovo agent.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "lint": "forge lint"
+  },
+  "devDependencies": {
+    "@forge/cli": "15.1.0",
+    "node": "^24.22.3"
+  }
+}

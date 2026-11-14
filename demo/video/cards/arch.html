@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+h1 { position: absolute; top: 90px; width: 100%; text-align: center; font-size: 56px; font-weight: 800; letter-spacing: -1px; }
+.box { position: absolute; background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.07); padding: 26px 30px; width: 360px; }
+.box .t { font-size: 32px; font-weight: 800; }
+.box .d { font-size: 21px; color: #6b6e73; margin-top: 8px; }
+.core { background: #172B4D; color: #fff; width: 440px; }
+.core .d { color: #c9d2e3; }
+.core .t span { color: #FCA700; }
+svg { position: absolute; inset: 0; }
+.pill { position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%); display: flex; gap: 24px; }
+.pill div { background: #fff; border: 2px solid #1F2328; border-radius: 999px; padding: 14px 30px; font-size: 26px; font-weight: 700; }
+.pill div.a { background: #FCA700; border-color: #FCA700; }
+</style></head><body><div class="paper"></div>
+<h1>How Sidebar works</h1>
+<svg width="1920" height="1080"><g stroke="#1F2328" stroke-width="3" fill="none" stroke-linecap="round">
+ <path d="M520 400 H720"/><path d="M520 640 H720"/><path d="M1160 400 H1400"/><path d="M1160 640 H1400"/></g></svg>
+<div class="box" style="left:160px;top:330px"><div class="t">JSM</div><div class="d">Requester sends the contract</div></div>
+<div class="box" style="left:160px;top:570px"><div class="t">Confluence</div><div class="d">Playbook page</div></div>
+<div class="box core" style="left:740px;top:400px;height:290px"><div class="t">Sidebar <span>on Forge</span></div><div class="d">Versions, redline, review, decisions. Issue panel + context panel in Jira.</div></div>
+<div class="box" style="left:1420px;top:330px"><div class="t">Forge LLM</div><div class="d">Hosted by Atlassian</div></div>
+<div class="box" style="left:1420px;top:570px"><div class="t">Rovo agent</div><div class="d">Check · Compare · Past matters</div></div>
+<div class="pill"><div class="a">Runs on Atlassian</div><div>Names &amp; amounts masked before the model</div></div>
+</body></html>

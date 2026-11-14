@@ -1,0 +1,15 @@
+{
+ "v01": "This is version two of a contract. One number changed, on page four. Thirty days became ten. Most people miss it. That's the point.",
+ "v02": "Sidebar. A second opinion on every contract, inside Jira.",
+ "v03": "Sales sends Legal a cloud service agreement from Northwind, through Jira Service Management.",
+ "v04": "Sidebar reads the contract against the company playbook in Confluence. Three clauses break it, and each comes with the exact wording to send back.",
+ "v04b": "One click replies to the requester.",
+ "v05": "Version two arrives. They fixed the liability cap. They did not fix the one-sided waiver.",
+ "v05b": "And here is the one you were meant to miss. Thirty days became ten.",
+ "v06": "What did we agree with Northwind before? Sidebar finds the earlier matter.",
+ "v06b": "The same answers are in Rovo, through the Sidebar agent.",
+ "v07": "Legal decides. Accepted clauses drop out. The requester gets one clean redline in the portal.",
+ "v08": "The playbook is a normal Confluence page. Change it, and Sidebar changes with it.",
+ "v08b": "Swap the playbook, and the same Sidebar reviews NDAs, purchase terms, offer letters, security questionnaires, vendor and partner deals.",
+ "v09": "It runs on Atlassian. Names and amounts are masked before the model sees them. Sidebar."
+}

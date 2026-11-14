@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+h1 { position: absolute; top: 120px; width: 100%; text-align: center; font-size: 60px; font-weight: 800; letter-spacing: -1px; }
+.grid { position: absolute; top: 300px; left: 210px; right: 210px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.card { background: #fff; border-radius: 22px; padding: 38px 40px; box-shadow: 0 8px 24px rgba(0,0,0,.07); height: 230px; }
+.card .k { font-size: 18px; font-weight: 700; color: #E09400; letter-spacing: 1px; text-transform: uppercase; }
+.card .t { font-size: 40px; font-weight: 800; margin-top: 14px; letter-spacing: -.5px; }
+.card .d { font-size: 22px; color: #6b6e73; margin-top: 12px; }
+.card.hide { visibility: hidden; }
+</style></head><body><div class="paper"></div>
+<h1>Swap the playbook. <span class="accent">Any team.</span></h1>
+<div class="grid">
+ <div class="card"><div class="k">Legal</div><div class="t">NDAs</div><div class="d">Mutual or one-way, term, carve-outs</div></div>
+ <div class="card"><div class="k">Procurement</div><div class="t">Purchase terms</div><div class="d">Payment days, price changes, exit</div></div>
+ <div class="card"><div class="k">People</div><div class="t">Offer letters</div><div class="d">Equity, notice, non-compete</div></div>
+ <div class="card"><div class="k">Security</div><div class="t">Questionnaires</div><div class="d">Answers that match your policy</div></div>
+ <div class="card"><div class="k">Operations</div><div class="t">Vendor deals</div><div class="d">SLAs, credits, data location</div></div>
+ <div class="card"><div class="k">Partnerships</div><div class="t">Partner deals</div><div class="d">Revenue share, exclusivity, logo use</div></div>
+</div>
+<script>
+const n = +(new URLSearchParams(location.search).get('n') ?? 6);
+document.querySelectorAll('.card').forEach((c, i) => { if (i >= n) c.classList.add('hide'); });
+</script>
+</body></html>

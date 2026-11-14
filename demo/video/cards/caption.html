@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+html, body { margin: 0; width: 1920px; height: 1080px; background: transparent; }
+.cap { position: absolute; left: 50%; bottom: 74px; transform: translateX(-50%); background: rgba(24,24,26,.86); color: #fff;
+  font-family: Pretendard, sans-serif; font-weight: 700; font-size: 44px; letter-spacing: -.3px; padding: 16px 34px; border-radius: 22px; white-space: nowrap; }
+.cap b { color: #FCA700; font-weight: 800; }
+</style></head><body><div class="cap" id="c"></div>
+<script>document.getElementById('c').innerHTML = new URLSearchParams(location.search).get('c');</script>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "name": "sidebar-app",
+  "version": "1.2.47-next.4",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "dependencies": {
+    "@forge/api": "^8.5.0",
+    "@forge/kvs": "^2.1.2",
+    "@forge/llm": "^1.0.10",
+    "@forge/resolver": "^2.0.2",
+    "diff": "^9.0.0",
+    "jszip": "^3.10.2"
+  }
+}
